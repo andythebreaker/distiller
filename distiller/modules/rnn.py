@@ -15,6 +15,10 @@
 #
 
 import pymysql
+def ft_out_q_mark(tmp):
+    tmp=str(tmp)
+    tmp=tmp.replace("'", '"')
+    return tmp
 #============================================================================================================================
 def sqllog_in(x_in, h_in):
     #資料庫連線設定
@@ -22,7 +26,7 @@ def sqllog_in(x_in, h_in):
     #建立操作游標
     cursor = db.cursor()
     #SQL語法
-    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`x_in`, `h_in`) VALUES ('"+str(x_in)+"', '"+str(h_in)+"');"
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`x_in`, `h_in`) VALUES ('"+ft_out_q_mark(x_in)+"', '"+ft_out_q_mark(h_in)+"');"
     #執行語法
 
     try:
@@ -44,7 +48,7 @@ def sqllog_prev(h_prev, c_prev):
     #建立操作游標
     cursor = db.cursor()
     #SQL語法
-    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`h_prev`, `c_prev`) VALUES ('"+str(h_prev)+"', '"+str(c_prev)+"');"
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`h_prev`, `c_prev`) VALUES ('"+ft_out_q_mark(h_prev)+"', '"+ft_out_q_mark(c_prev)+"');"
     #執行語法
 
     try:
@@ -66,7 +70,7 @@ def sqllog_fgio1(i,f,g,o):
     #建立操作游標
     cursor = db.cursor()
     #SQL語法
-    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`i1`, `f1`, `g1`, `o1`) VALUES ('"+str(i)+"', '"+str(f)+"', '"+str(g)+"', '"+str(o)+"');"
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`i1`, `f1`, `g1`, `o1`) VALUES ('"+ft_out_q_mark(i)+"', '"+ft_out_q_mark(f)+"', '"+ft_out_q_mark(g)+"', '"+ft_out_q_mark(o)+"');"
     #執行語法
 
     try:
@@ -88,7 +92,7 @@ def sqllog_fgio2(i,f,g,o):
     #建立操作游標
     cursor = db.cursor()
     #SQL語法
-    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`i2`, `f2`, `g2`, `o2`) VALUES ('"+str(i)+"', '"+str(f)+"', '"+str(g)+"', '"+str(o)+"');"
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`i2`, `f2`, `g2`, `o2`) VALUES ('"+ft_out_q_mark(i)+"', '"+ft_out_q_mark(f)+"', '"+ft_out_q_mark(g)+"', '"+ft_out_q_mark(o)+"');"
     #執行語法
 
     try:
@@ -110,7 +114,7 @@ def sqllog_cfci(cf,ci):
     #建立操作游標
     cursor = db.cursor()
     #SQL語法
-    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`cf`, `ci`) VALUES ('"+str(cf)+"', '"+str(ci)+"');"
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`cf`, `ci`) VALUES ('"+ft_out_q_mark(cf)+"', '"+ft_out_q_mark(ci)+"');"
     #執行語法
 
     try:
@@ -132,7 +136,7 @@ def sqllog_out(c,h):
     #建立操作游標
     cursor = db.cursor()
     #SQL語法
-    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`c`, `h`) VALUES ('"+str(c)+"', '"+str(h)+"');"
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`c`, `h`) VALUES ('"+ft_out_q_mark(c)+"', '"+ft_out_q_mark(h)+"');"
     #執行語法
 
     try:
@@ -221,7 +225,7 @@ class DistillerLSTMCell(nn.Module):
         sqllog_cfci(cf, ci)
         c = self.eltwiseadd_cell(cf, ci)
         h = self.eltwisemult_hidden(o, self.act_h(c))
-        sqllog_output(c, h)
+        sqllog_out(c, h)
         return h, c
 
     def init_hidden(self, batch_size, device='cuda:0'):

@@ -3,12 +3,12 @@ encoder:
   bits_weights: null
   bits_bias: null
   mode: &id001
-    activations: ASYMMETRIC_SIGNED
-    weights: ASYMMETRIC_SIGNED
+    activations: SYMMETRIC
+    weights: SYMMETRIC
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -588,7 +588,7 @@ rnn.cells.0.fc_gate_x:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -602,7 +602,7 @@ rnn.cells.0.fc_gate_h:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -616,7 +616,7 @@ rnn.cells.0.eltwiseadd_gate:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -630,7 +630,7 @@ rnn.cells.0.act_f:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -644,7 +644,7 @@ rnn.cells.0.act_i:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -658,7 +658,7 @@ rnn.cells.0.act_o:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -672,7 +672,7 @@ rnn.cells.0.act_g:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -686,7 +686,7 @@ rnn.cells.0.eltwisemult_cell_forget:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -700,7 +700,7 @@ rnn.cells.0.eltwisemult_cell_input:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -714,7 +714,7 @@ rnn.cells.0.eltwiseadd_cell:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -728,7 +728,7 @@ rnn.cells.0.act_h:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -742,7 +742,7 @@ rnn.cells.0.eltwisemult_hidden:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -756,7 +756,7 @@ rnn.cells.1.fc_gate_x:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -770,7 +770,7 @@ rnn.cells.1.fc_gate_h:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -784,7 +784,7 @@ rnn.cells.1.eltwiseadd_gate:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -798,7 +798,7 @@ rnn.cells.1.act_f:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -812,7 +812,7 @@ rnn.cells.1.act_i:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -826,7 +826,7 @@ rnn.cells.1.act_o:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -840,7 +840,7 @@ rnn.cells.1.act_g:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -854,7 +854,7 @@ rnn.cells.1.eltwisemult_cell_forget:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -868,7 +868,7 @@ rnn.cells.1.eltwisemult_cell_input:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -882,7 +882,7 @@ rnn.cells.1.eltwiseadd_cell:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -896,7 +896,7 @@ rnn.cells.1.act_h:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -910,7 +910,7 @@ rnn.cells.1.eltwisemult_hidden:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -924,7 +924,7 @@ rnn.dropout:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
@@ -938,62 +938,62 @@ decoder:
   clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
-  per_channel_wts: true
+  per_channel_wts: false
   scale_approx_mult_bits: null
   inputs_quant_auto_fallback: true
   fpq_module: null
   model_activation_stats: *id002
   overrides: null
 linear_quant_params:
-  encoder.w_scale: 134.8851318359375
-  encoder.w_zero_point: -8.0
-  rnn.cells.0.fc_gate_x.output_scale: 19.333110809326172
-  rnn.cells.0.fc_gate_x.output_zero_point: -11.0
-  rnn.cells.0.fc_gate_h.output_scale: 10.404870986938477
-  rnn.cells.0.fc_gate_h.output_zero_point: -1.0
+  encoder.w_scale: 126.79366302490234
+  encoder.w_zero_point: 0.0
+  rnn.cells.0.fc_gate_x.output_scale: 17.780996322631836
+  rnn.cells.0.fc_gate_x.output_zero_point: 0.0
+  rnn.cells.0.fc_gate_h.output_scale: 10.321170806884766
+  rnn.cells.0.fc_gate_h.output_zero_point: 0.0
   rnn.cells.0.eltwiseadd_gate.output_scale: 21.25
   rnn.cells.0.eltwiseadd_gate.output_zero_point: 0.0
-  rnn.cells.0.act_f.output_scale: 255.00070190429688
-  rnn.cells.0.act_f.output_zero_point: 128.0
-  rnn.cells.0.act_i.output_scale: 255.00180053710938
-  rnn.cells.0.act_i.output_zero_point: 128.0
-  rnn.cells.0.act_o.output_scale: 255.04812622070312
-  rnn.cells.0.act_o.output_zero_point: 128.0
+  rnn.cells.0.act_f.output_scale: 127.50035095214844
+  rnn.cells.0.act_f.output_zero_point: 0.0
+  rnn.cells.0.act_i.output_scale: 127.50090026855469
+  rnn.cells.0.act_i.output_zero_point: 0.0
+  rnn.cells.0.act_o.output_scale: 127.52406311035156
+  rnn.cells.0.act_o.output_zero_point: 0.0
   rnn.cells.0.act_g.output_scale: 127.5
   rnn.cells.0.act_g.output_zero_point: 0.0
-  rnn.cells.0.eltwisemult_cell_forget.output_scale: 8.305061340332031
-  rnn.cells.0.eltwisemult_cell_forget.output_zero_point: -22.0
-  rnn.cells.0.eltwisemult_cell_input.output_scale: 127.51276397705078
+  rnn.cells.0.eltwisemult_cell_forget.output_scale: 7.042788505554199
+  rnn.cells.0.eltwisemult_cell_forget.output_zero_point: 0.0
+  rnn.cells.0.eltwisemult_cell_input.output_scale: 127.50730895996094
   rnn.cells.0.eltwisemult_cell_input.output_zero_point: 0.0
-  rnn.cells.0.eltwiseadd_cell.output_scale: 8.159045219421387
-  rnn.cells.0.eltwiseadd_cell.output_zero_point: -23.0
+  rnn.cells.0.eltwiseadd_cell.output_scale: 6.895807266235352
+  rnn.cells.0.eltwiseadd_cell.output_zero_point: 0.0
   rnn.cells.0.act_h.output_scale: 127.5
   rnn.cells.0.act_h.output_zero_point: 0.0
-  rnn.cells.0.eltwisemult_hidden.output_scale: 128.17530822753906
-  rnn.cells.0.eltwisemult_hidden.output_zero_point: 1.0
-  rnn.cells.1.fc_gate_x.output_scale: 8.92414665222168
-  rnn.cells.1.fc_gate_x.output_zero_point: 1.0
-  rnn.cells.1.fc_gate_h.output_scale: 10.851107597351074
-  rnn.cells.1.fc_gate_h.output_zero_point: 5.0
+  rnn.cells.0.eltwisemult_hidden.output_scale: 128.10325622558594
+  rnn.cells.0.eltwisemult_hidden.output_zero_point: 0.0
+  rnn.cells.1.fc_gate_x.output_scale: 8.895503044128418
+  rnn.cells.1.fc_gate_x.output_zero_point: 0.0
+  rnn.cells.1.fc_gate_h.output_scale: 10.441934585571289
+  rnn.cells.1.fc_gate_h.output_zero_point: 0.0
   rnn.cells.1.eltwiseadd_gate.output_scale: 21.25
   rnn.cells.1.eltwiseadd_gate.output_zero_point: 0.0
-  rnn.cells.1.act_f.output_scale: 255.00027465820312
-  rnn.cells.1.act_f.output_zero_point: 128.0
-  rnn.cells.1.act_i.output_scale: 255.00003051757812
-  rnn.cells.1.act_i.output_zero_point: 128.0
-  rnn.cells.1.act_o.output_scale: 255.0
-  rnn.cells.1.act_o.output_zero_point: 128.0
+  rnn.cells.1.act_f.output_scale: 127.50013732910156
+  rnn.cells.1.act_f.output_zero_point: 0.0
+  rnn.cells.1.act_i.output_scale: 127.50001525878906
+  rnn.cells.1.act_i.output_zero_point: 0.0
+  rnn.cells.1.act_o.output_scale: 127.5
+  rnn.cells.1.act_o.output_zero_point: 0.0
   rnn.cells.1.act_g.output_scale: 127.5
   rnn.cells.1.act_g.output_zero_point: 0.0
-  rnn.cells.1.eltwisemult_cell_forget.output_scale: 2.149263620376587
-  rnn.cells.1.eltwisemult_cell_forget.output_zero_point: 24.0
-  rnn.cells.1.eltwisemult_cell_input.output_scale: 127.50010681152344
+  rnn.cells.1.eltwisemult_cell_forget.output_scale: 1.8113645315170288
+  rnn.cells.1.eltwisemult_cell_forget.output_zero_point: 0.0
+  rnn.cells.1.eltwisemult_cell_input.output_scale: 127.50001525878906
   rnn.cells.1.eltwisemult_cell_input.output_zero_point: 0.0
-  rnn.cells.1.eltwiseadd_cell.output_scale: 2.1341552734375
-  rnn.cells.1.eltwiseadd_cell.output_zero_point: 25.0
+  rnn.cells.1.eltwiseadd_cell.output_scale: 1.790614128112793
+  rnn.cells.1.eltwiseadd_cell.output_zero_point: 0.0
   rnn.cells.1.act_h.output_scale: 127.5
   rnn.cells.1.act_h.output_zero_point: 0.0
-  rnn.cells.1.eltwisemult_hidden.output_scale: 127.50689697265625
-  rnn.cells.1.eltwisemult_hidden.output_zero_point: 1.0
-  decoder.output_scale: 5.024112224578857
-  decoder.output_zero_point: 48.0
+  rnn.cells.1.eltwisemult_hidden.output_scale: 127.50039672851562
+  rnn.cells.1.eltwisemult_hidden.output_zero_point: 0.0
+  decoder.output_scale: 3.670504093170166
+  decoder.output_zero_point: 0.0
