@@ -5,6 +5,11 @@
 # It contains code to support compression (distiller)
 #
 # coding: utf-8
+
+#andy
+import sys
+sys.path.append("../..")
+
 import argparse
 import time
 import math
