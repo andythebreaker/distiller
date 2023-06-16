@@ -5,7 +5,7 @@ encoder:
   mode: &id001
     activations: ASYMMETRIC_SIGNED
     weights: ASYMMETRIC_SIGNED
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -585,7 +585,7 @@ rnn.cells.0.fc_gate_x:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -599,7 +599,7 @@ rnn.cells.0.fc_gate_h:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -613,7 +613,7 @@ rnn.cells.0.eltwiseadd_gate:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -627,7 +627,7 @@ rnn.cells.0.act_f:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -641,7 +641,7 @@ rnn.cells.0.act_i:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -655,7 +655,7 @@ rnn.cells.0.act_o:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -669,7 +669,7 @@ rnn.cells.0.act_g:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -683,7 +683,7 @@ rnn.cells.0.eltwisemult_cell_forget:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -697,7 +697,7 @@ rnn.cells.0.eltwisemult_cell_input:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -711,7 +711,7 @@ rnn.cells.0.eltwiseadd_cell:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -725,7 +725,7 @@ rnn.cells.0.act_h:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -739,7 +739,7 @@ rnn.cells.0.eltwisemult_hidden:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -753,7 +753,7 @@ rnn.cells.1.fc_gate_x:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -767,7 +767,7 @@ rnn.cells.1.fc_gate_h:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -781,7 +781,7 @@ rnn.cells.1.eltwiseadd_gate:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -795,7 +795,7 @@ rnn.cells.1.act_f:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -809,7 +809,7 @@ rnn.cells.1.act_i:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -823,7 +823,7 @@ rnn.cells.1.act_o:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -837,7 +837,7 @@ rnn.cells.1.act_g:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -851,7 +851,7 @@ rnn.cells.1.eltwisemult_cell_forget:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -865,7 +865,7 @@ rnn.cells.1.eltwisemult_cell_input:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -879,7 +879,7 @@ rnn.cells.1.eltwiseadd_cell:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -893,7 +893,7 @@ rnn.cells.1.act_h:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -907,7 +907,7 @@ rnn.cells.1.eltwisemult_hidden:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -921,7 +921,7 @@ rnn.dropout:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -935,7 +935,7 @@ decoder:
   bits_weights: null
   bits_bias: null
   mode: *id001
-  clip_acts: AVG
+  clip_acts: NONE
   clip_n_stds: null
   clip_half_range: false
   per_channel_wts: true
@@ -947,53 +947,53 @@ decoder:
 linear_quant_params:
   encoder.w_scale: 134.8851318359375
   encoder.w_zero_point: -8.0
-  rnn.cells.0.fc_gate_x.output_scale: 30.890892028808594
-  rnn.cells.0.fc_gate_x.output_zero_point: -8.0
-  rnn.cells.0.fc_gate_h.output_scale: 31.879756927490234
-  rnn.cells.0.fc_gate_h.output_zero_point: -5.0
-  rnn.cells.0.eltwiseadd_gate.output_scale: 22.130435943603516
-  rnn.cells.0.eltwiseadd_gate.output_zero_point: -5.0
-  rnn.cells.0.act_f.output_scale: 257.517822265625
+  rnn.cells.0.fc_gate_x.output_scale: 19.333110809326172
+  rnn.cells.0.fc_gate_x.output_zero_point: -11.0
+  rnn.cells.0.fc_gate_h.output_scale: 10.404870986938477
+  rnn.cells.0.fc_gate_h.output_zero_point: -1.0
+  rnn.cells.0.eltwiseadd_gate.output_scale: 21.25
+  rnn.cells.0.eltwiseadd_gate.output_zero_point: 0.0
+  rnn.cells.0.act_f.output_scale: 255.00070190429688
   rnn.cells.0.act_f.output_zero_point: 128.0
-  rnn.cells.0.act_i.output_scale: 268.8049011230469
+  rnn.cells.0.act_i.output_scale: 255.00180053710938
   rnn.cells.0.act_i.output_zero_point: 128.0
-  rnn.cells.0.act_o.output_scale: 269.25482177734375
+  rnn.cells.0.act_o.output_scale: 255.04812622070312
   rnn.cells.0.act_o.output_zero_point: 128.0
-  rnn.cells.0.act_g.output_scale: 127.60608673095703
+  rnn.cells.0.act_g.output_scale: 127.5
   rnn.cells.0.act_g.output_zero_point: 0.0
-  rnn.cells.0.eltwisemult_cell_forget.output_scale: 98.69812774658203
-  rnn.cells.0.eltwisemult_cell_forget.output_zero_point: 0.0
-  rnn.cells.0.eltwisemult_cell_input.output_scale: 141.40155029296875
+  rnn.cells.0.eltwisemult_cell_forget.output_scale: 8.305061340332031
+  rnn.cells.0.eltwisemult_cell_forget.output_zero_point: -22.0
+  rnn.cells.0.eltwisemult_cell_input.output_scale: 127.51276397705078
   rnn.cells.0.eltwisemult_cell_input.output_zero_point: 0.0
-  rnn.cells.0.eltwiseadd_cell.output_scale: 81.24446105957031
-  rnn.cells.0.eltwiseadd_cell.output_zero_point: 1.0
-  rnn.cells.0.act_h.output_scale: 147.94749450683594
-  rnn.cells.0.act_h.output_zero_point: 1.0
-  rnn.cells.0.eltwisemult_hidden.output_scale: 223.89173889160156
-  rnn.cells.0.eltwisemult_hidden.output_zero_point: 0.0
-  rnn.cells.1.fc_gate_x.output_scale: 25.892047882080078
-  rnn.cells.1.fc_gate_x.output_zero_point: 2.0
-  rnn.cells.1.fc_gate_h.output_scale: 24.714191436767578
-  rnn.cells.1.fc_gate_h.output_zero_point: 1.0
+  rnn.cells.0.eltwiseadd_cell.output_scale: 8.159045219421387
+  rnn.cells.0.eltwiseadd_cell.output_zero_point: -23.0
+  rnn.cells.0.act_h.output_scale: 127.5
+  rnn.cells.0.act_h.output_zero_point: 0.0
+  rnn.cells.0.eltwisemult_hidden.output_scale: 128.17530822753906
+  rnn.cells.0.eltwisemult_hidden.output_zero_point: 1.0
+  rnn.cells.1.fc_gate_x.output_scale: 8.92414665222168
+  rnn.cells.1.fc_gate_x.output_zero_point: 1.0
+  rnn.cells.1.fc_gate_h.output_scale: 10.851107597351074
+  rnn.cells.1.fc_gate_h.output_zero_point: 5.0
   rnn.cells.1.eltwiseadd_gate.output_scale: 21.25
   rnn.cells.1.eltwiseadd_gate.output_zero_point: 0.0
-  rnn.cells.1.act_f.output_scale: 255.37210083007812
+  rnn.cells.1.act_f.output_scale: 255.00027465820312
   rnn.cells.1.act_f.output_zero_point: 128.0
-  rnn.cells.1.act_i.output_scale: 257.05609130859375
+  rnn.cells.1.act_i.output_scale: 255.00003051757812
   rnn.cells.1.act_i.output_zero_point: 128.0
-  rnn.cells.1.act_o.output_scale: 255.6669464111328
+  rnn.cells.1.act_o.output_scale: 255.0
   rnn.cells.1.act_o.output_zero_point: 128.0
-  rnn.cells.1.act_g.output_scale: 127.50328063964844
-  rnn.cells.1.act_g.output_zero_point: 1.0
-  rnn.cells.1.eltwisemult_cell_forget.output_scale: 18.818315505981445
-  rnn.cells.1.eltwisemult_cell_forget.output_zero_point: 26.0
-  rnn.cells.1.eltwisemult_cell_input.output_scale: 130.13710021972656
-  rnn.cells.1.eltwisemult_cell_input.output_zero_point: 1.0
-  rnn.cells.1.eltwiseadd_cell.output_scale: 18.01117706298828
+  rnn.cells.1.act_g.output_scale: 127.5
+  rnn.cells.1.act_g.output_zero_point: 0.0
+  rnn.cells.1.eltwisemult_cell_forget.output_scale: 2.149263620376587
+  rnn.cells.1.eltwisemult_cell_forget.output_zero_point: 24.0
+  rnn.cells.1.eltwisemult_cell_input.output_scale: 127.50010681152344
+  rnn.cells.1.eltwisemult_cell_input.output_zero_point: 0.0
+  rnn.cells.1.eltwiseadd_cell.output_scale: 2.1341552734375
   rnn.cells.1.eltwiseadd_cell.output_zero_point: 25.0
-  rnn.cells.1.act_h.output_scale: 128.3214874267578
-  rnn.cells.1.act_h.output_zero_point: 1.0
-  rnn.cells.1.eltwisemult_hidden.output_scale: 140.34481811523438
+  rnn.cells.1.act_h.output_scale: 127.5
+  rnn.cells.1.act_h.output_zero_point: 0.0
+  rnn.cells.1.eltwisemult_hidden.output_scale: 127.50689697265625
   rnn.cells.1.eltwisemult_hidden.output_zero_point: 1.0
-  decoder.output_scale: 9.93927001953125
-  decoder.output_zero_point: 56.0
+  decoder.output_scale: 5.024112224578857
+  decoder.output_zero_point: 48.0

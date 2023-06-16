@@ -14,6 +14,141 @@
 # limitations under the License.
 #
 
+import pymysql
+#============================================================================================================================
+def sqllog_in(x_in, h_in):
+    #資料庫連線設定
+    db = pymysql.connect(host='localhost', port=3306, user='admin_user', passwd='admin', db='ai23', charset='utf8')
+    #建立操作游標
+    cursor = db.cursor()
+    #SQL語法
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`x_in`, `h_in`) VALUES ('"+str(x_in)+"', '"+str(h_in)+"');"
+    #執行語法
+
+    try:
+      cursor.execute(sql)
+      #提交修改
+      db.commit()
+      #print('success')
+    except:
+      #發生錯誤時停止執行SQL
+      db.rollback()
+      print('SQLerror')
+
+    #關閉連線
+    db.close()
+#============================================================================================================================
+def sqllog_prev(h_prev, c_prev):
+    #資料庫連線設定
+    db = pymysql.connect(host='localhost', port=3306, user='admin_user', passwd='admin', db='ai23', charset='utf8')
+    #建立操作游標
+    cursor = db.cursor()
+    #SQL語法
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`h_prev`, `c_prev`) VALUES ('"+str(h_prev)+"', '"+str(c_prev)+"');"
+    #執行語法
+
+    try:
+      cursor.execute(sql)
+      #提交修改
+      db.commit()
+      #print('success')
+    except:
+      #發生錯誤時停止執行SQL
+      db.rollback()
+      print('SQLerror')
+
+    #關閉連線
+    db.close()
+#============================================================================================================================
+def sqllog_fgio1(i,f,g,o):
+    #資料庫連線設定
+    db = pymysql.connect(host='localhost', port=3306, user='admin_user', passwd='admin', db='ai23', charset='utf8')
+    #建立操作游標
+    cursor = db.cursor()
+    #SQL語法
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`i1`, `f1`, `g1`, `o1`) VALUES ('"+str(i)+"', '"+str(f)+"', '"+str(g)+"', '"+str(o)+"');"
+    #執行語法
+
+    try:
+      cursor.execute(sql)
+      #提交修改
+      db.commit()
+      #print('success')
+    except:
+      #發生錯誤時停止執行SQL
+      db.rollback()
+      print('SQLerror')
+
+    #關閉連線
+    db.close()
+#============================================================================================================================
+def sqllog_fgio2(i,f,g,o):
+    #資料庫連線設定
+    db = pymysql.connect(host='localhost', port=3306, user='admin_user', passwd='admin', db='ai23', charset='utf8')
+    #建立操作游標
+    cursor = db.cursor()
+    #SQL語法
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`i2`, `f2`, `g2`, `o2`) VALUES ('"+str(i)+"', '"+str(f)+"', '"+str(g)+"', '"+str(o)+"');"
+    #執行語法
+
+    try:
+      cursor.execute(sql)
+      #提交修改
+      db.commit()
+      #print('success')
+    except:
+      #發生錯誤時停止執行SQL
+      db.rollback()
+      print('SQLerror')
+
+    #關閉連線
+    db.close()
+#============================================================================================================================
+def sqllog_cfci(cf,ci):
+    #資料庫連線設定
+    db = pymysql.connect(host='localhost', port=3306, user='admin_user', passwd='admin', db='ai23', charset='utf8')
+    #建立操作游標
+    cursor = db.cursor()
+    #SQL語法
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`cf`, `ci`) VALUES ('"+str(cf)+"', '"+str(ci)+"');"
+    #執行語法
+
+    try:
+      cursor.execute(sql)
+      #提交修改
+      db.commit()
+      #print('success')
+    except:
+      #發生錯誤時停止執行SQL
+      db.rollback()
+      print('SQLerror')
+
+    #關閉連線
+    db.close()
+#============================================================================================================================
+def sqllog_out(c,h):
+    #資料庫連線設定
+    db = pymysql.connect(host='localhost', port=3306, user='admin_user', passwd='admin', db='ai23', charset='utf8')
+    #建立操作游標
+    cursor = db.cursor()
+    #SQL語法
+    sql = "INSERT INTO `ai23`.`DistillerLSTMCell` (`c`, `h`) VALUES ('"+str(c)+"', '"+str(h)+"');"
+    #執行語法
+
+    try:
+      cursor.execute(sql)
+      #提交修改
+      db.commit()
+      #print('success')
+    except:
+      #發生錯誤時停止執行SQL
+      db.rollback()
+      print('SQLerror')
+
+    #關閉連線
+    db.close()
+#============================================================================================================================
+
 import torch
 import torch.nn as nn
 import numpy as np
@@ -69,17 +204,24 @@ class DistillerLSTMCell(nn.Module):
         """
         Implemented as defined in https://pytorch.org/docs/stable/nn.html#lstmcell.
         """
+        #print('!debug!')
+        sqllog_in(x,h)
         x_bsz, x_device = x.size(1), x.device
         if h is None:
             h = self.init_hidden(x_bsz, device=x_device)
         
         h_prev, c_prev = h
+        sqllog_prev(h_prev, c_prev)
         fc_gate = self.eltwiseadd_gate(self.fc_gate_x(x), self.fc_gate_h(h_prev))
         i, f, g, o = torch.chunk(fc_gate, 4, dim=1)
+        sqllog_fgio1(i, f, g, o)
         i, f, g, o = self.act_i(i), self.act_f(f), self.act_g(g), self.act_o(o)
+        sqllog_fgio2(i, f, g, o)
         cf, ci = self.eltwisemult_cell_forget(f, c_prev), self.eltwisemult_cell_input(i, g)
+        sqllog_cfci(cf, ci)
         c = self.eltwiseadd_cell(cf, ci)
         h = self.eltwisemult_hidden(o, self.act_h(c))
+        sqllog_output(c, h)
         return h, c
 
     def init_hidden(self, batch_size, device='cuda:0'):
